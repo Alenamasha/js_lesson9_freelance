@@ -18,12 +18,23 @@
 	</p>
 	<h1><mark>Розв'язок:</mark></h1>
 	<script>
-		let arr = [4, 1, 5, 2, 6, 0, 6]
-		const firstElement = arr[0]
-		arr.forEach((element, index, arrRef) => {
-			if (element > firstElement) arrRef[index] *= 2
+		function getArray() {
+			let minValue = 1
+			let maxValue = 1000
+			const itemsNumber = parseInt(prompt('Введіть кількість елементів масиву'))
+			let arr = []
+			for (let i = 0; i < itemsNumber; i++) {
+				item = Math.floor(Math.random() * (maxValue - minValue + 1) + minValue)
+				arr.push(item)
+			}
+			return arr
+		}
+		const randomArray = getArray()
+
+		randomArray.forEach((item, index, arr) => {
+			if (item > arr[0]) arr[index] *= 2
 		})
-		document.write(arr)
+		document.write(randomArray)
 	</script>
 </body>
 </body>

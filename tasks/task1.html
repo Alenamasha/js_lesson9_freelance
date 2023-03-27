@@ -13,15 +13,17 @@
 
     <a href="../index.html">Home Work №3</a>
     <h1>Задача 1</h1>
-    <p>
-        Користувач вводить кількість елементів. Створити масив, що складається з
-        вказаної кількості елементів заповнених нулями.
+    <p>Користувач вводить кількість елементів. Створити масив, що складається з вказаної кількості елементів
+        заповнених нулями.
     </p>
+
     <h1><mark>Розв'язок:</mark></h1>
     <script>
-        const userElementsAmount = parseInt(prompt('Введіть кількість елементів'))
-        let elementsList = new Array(userElementsAmount).fill(0)
-        document.write(elementsList)
+        function getArrayZeroValue() {
+            const itemsNumber = parseInt(prompt('Введіть к-сть елементів'))
+            return new Array(itemsNumber).fill(0)
+        }
+        document.write(getArrayZeroValue())
     </script>
 </body>
 

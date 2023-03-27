@@ -18,12 +18,26 @@
     </p>
     <h1><mark>Розв'язок:</mark></h1>
     <script>
-        let priceList = [1500, 90, 150, 2000, 100, 3000]
-        const discount = 0.7
-        priceList.forEach((element, index, arrRef) => {
-            if (element > 1000) arrRef[index] *= discount
+        function getArray() {
+            let minValue = 1
+            let maxValue = 3000
+            const itemsNumber = parseInt(prompt('Введіть кількість елементів масиву'))
+            let arr = []
+            for (let i = 0; i < itemsNumber; i++) {
+                item = Math.floor(Math.random() * (maxValue - minValue + 1) + minValue)
+                arr.push(item)
+            }
+            return arr
+        }
+        const randomArray = getArray()
+
+        randomArray.forEach((price, index, arr) => {
+            if (price > 1000) {
+                arr[index] - (arr[index] *= 0.3)
+            }
         })
-        document.write(priceList)
+        document.write(randomArray)
+
     </script>
 </body>
 

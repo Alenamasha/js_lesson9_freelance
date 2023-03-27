@@ -12,18 +12,21 @@
 <body>
     <a href="../index.html">Home Work №3</a>
     <h1>Задача 2</h1>
-    <p>
-        Користувач вводить кількість елементів. Створити масив, у якому перша
-        половина заповнена 1-цями, а друга заповнена 7-ками.
+    <p>Користувач вводить кількість елементів. Створити масив, у якому перша половина заповнена 1-цями, а друга
+        заповнена 7-ками.
     </p>
+
     <h1><mark>Розв'язок:</mark></h1>
+    <p>Результат:</p>
     <script>
-        const userElementsAmount = parseInt(prompt("Введіть кількість елементів"))
-        let elementsList = new Array(userElementsAmount)
-        const elementsListMiddleIndex = Math.floor(elementsList.length / 2)
-        elementsList.fill(1, 0, elementsListMiddleIndex)
-        elementsList.fill(7, elementsListMiddleIndex)
-        document.write(elementsList)
+        //user enters qnt; calc half; create arr; fill 1; fill 7
+        function getArray() {
+            const itemsNumber = parseInt(prompt('Введіть кількість елементів'))
+            let arrHalf = Math.floor(itemsNumber / 2)
+            let arr = new Array(itemsNumber).fill(1, 0, arrHalf).fill(7, arrHalf)
+            return arr
+        }
+        document.write(getArray())
     </script>
 </body>
 

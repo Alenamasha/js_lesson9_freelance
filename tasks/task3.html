@@ -12,20 +12,31 @@
 <body>
     <a href="../index.html">Home Work №3</a>
     <h1>Задача 3</h1>
-    <p>
-        Користувач вводить кількість елементів. Створити масив, у якому перші 5
-        елементів заповнені 1-цями, а інші до кінця масиву заповнені 7-ками. /////
-        ---------- Тут використати цикл for..of -----------
+    <p>Дано масив елементів. Вивести на екран елементи, що більші за 100 (for...of)
     </p>
+
     <h1><mark>Розв'язок:</mark></h1>
     <script>
-        const userElementsAmount = parseInt(prompt("Введіть кількість елементів"))
-        let elementsList = new Array(userElementsAmount)
-        elementsList.fill(1, 0, 5)
-        elementsList.fill(7, 5)
-        for (const element of elementsList) {
-            document.write(`${element}<br>`)
+        function getArray() {
+            let minValue = 1
+            let maxValue = 3000
+            const itemsNumber = parseInt(prompt('Введіть кількість елементів масиву'))
+            let arr = []
+            for (let i = 0; i < itemsNumber; i++) {
+                item = Math.floor(Math.random() * (maxValue - minValue + 1) + minValue)
+                arr.push(item)
+            }
+            return arr
         }
+        const randomArray = getArray()
+
+        function showItemsOver_100(randomArray) {
+            for (let item of randomArray) {
+                if (item > 100)
+                    document.write(`${item},`)
+            }
+        }
+        showItemsOver_100(randomArray)
     </script>
 </body>
 

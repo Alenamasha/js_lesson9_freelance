@@ -18,12 +18,14 @@
     </p>
     <h1><mark>Розв'язок:</mark></h1>
     <script>
-        let arrayOfCarsNumber = ["AD3045", "GF2590", "SE6782", "AP7230", "AT4080"]
-        let newArrayOfCarsNumber = arrayOfCarsNumber.filter(
-            autoNumber => autoNumber[0] === "A"
-        )
-        document.write(`${arrayOfCarsNumber}<br>
-		Новий масив номерів, які починаються на 'A': ${newArrayOfCarsNumber}.`)
+        let carNumbersArray = ['DP123', 'DP123456', 'AA1234ZE', 'AA1234ZA']
+        function getCarNumbersStartingA(carNumbersArray) {
+            let carNumbersStartingA = carNumbersArray.filter(item =>
+                item[0] === 'A'
+            )
+            return carNumbersStartingA
+        }
+        document.write(getCarNumbersStartingA(carNumbersArray))
     </script>
 </body>
 

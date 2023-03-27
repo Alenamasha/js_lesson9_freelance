@@ -18,14 +18,25 @@
     </p>
     <h1><mark>Розв'язок:</mark></h1>
     <script>
-        let arr = [2, 0, -1, 5, -2, 8, 2, 4]
-        let productOfPositiveElements = 1
-        for (const element of arr) {
-            if (element > 0) productOfPositiveElements *= element
+        function getArray() {
+            let minValue = -100
+            let maxValue = 100
+            const itemsNumber = parseInt(prompt('Введіть кількість елементів масиву'))
+            let arr = []
+            for (let i = 0; i < itemsNumber; i++) {
+                item = Math.floor(Math.random() * (maxValue - minValue + 1) + minValue)
+                arr.push(item)
+            }
+            return arr
         }
-        document.write(
-            `Добуток додатних елементів - ${productOfPositiveElements}.`
-        )
+        const randomArray = getArray()
+
+        let product = 1
+        for (let item of randomArray) {
+            if (item > 0)
+                product *= item
+        }
+        document.write(product)
     </script>
 </body>
 
